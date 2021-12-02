@@ -4,7 +4,7 @@ body {
 }
 
 .App {
-  background-color: black;
+  border: 1px solid black;
   width: 350px;
   height: 480px;
 }
