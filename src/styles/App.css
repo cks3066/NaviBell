@@ -4,7 +4,24 @@ body {
 }
 
 .App {
-  border: 1px solid black;
   width: 350px;
   height: 480px;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 13px;
+  width: 90%;
+}
+
+input:focus {
+  outline: none;
+}
+
+.hr {
+  border-bottom: 1px solid #9da7b6;
+  margin-top: 5px;
 }
