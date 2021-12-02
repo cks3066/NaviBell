@@ -8,13 +8,20 @@ const RoutePage = (props) => {
     <>
       <div className="SearchContainer">
         <div className="SearchInputContainer">
-          <input type="text" maxlength="13" />
+          <input type="text" />
           <div className="hr" />
-          <input type="text" maxlength="13" />
+          <input type="text" />
         </div>
-        <div id="searchBtn">
-          <img src={searchBtn} width="50px" class="searchBtn" />
+        <img src={searchBtn} width="30px" height="30px" class="searchBtn" />
+      </div>
+
+      <div className="routeInitComponent">
+        <div className="routeInitContainer">
+          <div className="recentSearch">최근검색</div>
+          <div className="bookMark">즐겨찾기</div>
         </div>
+
+        <div className="recentSearchList"></div>
       </div>
     </>
   );

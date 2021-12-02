@@ -4,17 +4,58 @@
   align-items: center;
   background-color: #e4e8ed;
   width: 75%;
-  height: 15%;
+  height: 20%;
   border-radius: 5px;
   margin-top: 50px;
 }
 
 .searchBtn {
-  margin: 0px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .SearchInputContainer {
   width: 100%;
-  margin-right: -15px;
-  margin-left: 15px;
+  margin-left: 20px;
+}
+
+.routeInitComponent {
+  width: 75%;
+}
+.routeInitContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.recentSearch {
+  background-color: #3d73dd;
+  text-align: center;
+  width: 45%;
+  border-radius: 5px;
+  color: white;
+  height: 35px;
+  line-height: 35px;
+  margin: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.bookMark {
+  text-align: center;
+  width: 45%;
+  border-radius: 5px;
+  height: 35px;
+  line-height: 35px;
+  margin: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.recentSearchList {
+  background-color: #ebf0f7;
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
 }

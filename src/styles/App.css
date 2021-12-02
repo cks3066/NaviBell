@@ -4,17 +4,19 @@ body {
 }
 
 .App {
+  border: 1px solid black;
   width: 350px;
   height: 480px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 input {
   border: none;
   background-color: rgba(0, 0, 0, 0);
   font-size: 13px;
-  width: 90%;
+  width: 95%;
 }
 
 input:focus {
@@ -23,5 +25,6 @@ input:focus {
 
 .hr {
   border-bottom: 1px solid #9da7b6;
-  margin-top: 5px;
+  margin-top: 8px;
+  margin-bottom: 6px;
 }
