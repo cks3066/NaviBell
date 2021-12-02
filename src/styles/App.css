@@ -5,5 +5,6 @@ body {
 
 .App {
   background-color: black;
-  width: 330px;
+  width: 350px;
+  height: 480px;
 }
