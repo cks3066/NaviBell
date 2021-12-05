@@ -4,6 +4,7 @@ import axios from "axios";
 import "../styles/Route.css";
 
 import searchBtn from "../img/searchButton.png";
+import recentSearch from "../img/recentSearch.png";
 
 const RoutePage = (props) => {
   const [출발지, set출발지] = React.useState("");
@@ -15,7 +16,13 @@ const RoutePage = (props) => {
   const [버스, set버스] = React.useState(false);
   const [지하철, set지하철] = React.useState(false);
   const [버스지하철, set버스지하철] = React.useState(false);
-
+  const [최근검색목록, set최근검색목록] = React.useState([
+    "포티드",
+    "이마트 트레이더스",
+    "월계역 2번 출구",
+    "광운대학교",
+    "번3동 주민센터",
+  ]);
   const handleSearchOnClick = (e) => {
     if (출발지 === "" || 도착지 === "") {
     } else {
@@ -83,7 +90,37 @@ const RoutePage = (props) => {
             </div>
           </div>
 
-          <div className="recentSearchList"></div>
+          <div className="recentSearchList">
+            {최근검색 ? (
+              <div>
+                {최근검색목록.map((item) => (
+                  <div>
+                    <div className="recentSearch">
+                      <img
+                        src={recentSearch}
+                        width="14px"
+                        height="14px"
+                        alt="recentSearch"
+                        className="recentSearchImg"
+                      />
+                      <div className="recentSearchItem">{item}</div>
+                    </div>
+                    <div className="hr2" />
+                  </div>
+                ))}
+                <div
+                  className="deleteSearches"
+                  onClick={(e) => {
+                    set최근검색목록([]);
+                  }}
+                >
+                  검색기록 삭제
+                </div>
+              </div>
+            ) : (
+              <div>즐겨찾기 목록</div>
+            )}
+          </div>
         </div>
       ) : (
         <div className="routeShowComponent">

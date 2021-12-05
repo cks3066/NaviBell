@@ -27,3 +27,7 @@ input:focus {
   margin-top: 8px;
   margin-bottom: 6px;
 }
+
+.hr2 {
+  border-bottom: 1px solid #dddfe3;
+}
