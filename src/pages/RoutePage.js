@@ -6,16 +6,16 @@ import "../styles/Route.css";
 import searchBtn from "../img/searchButton.png";
 
 const handleSearchOnClick = (e) => {
-  var xhr = new XMLHttpRequest();
-  var url =
-    "https://api.odsay.com/v1/api/searchPubTransPath?SX=126.9027279&SY=37.5349277&EX=126.9145430&EY=37.5499421&apiKey=UPu%2BWjCg6qf1ZRG9oyRKzw";
-  xhr.open("GET", url, true);
-  xhr.send();
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      console.log(xhr.responseText); // <- xhr.responseText 로 결과를 가져올 수 있음
-    }
-  };
+  axios
+    .get(
+      "https://api.odsay.com/v1/api/searchPubTransPath?SX=126.9027279&SY=37.5349277&EX=126.9145430&EY=37.5499421&apiKey=UPu%2BWjCg6qf1ZRG9oyRKzw"
+    )
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((error) => {
+      console.dir(error);
+    });
 };
 
 const RoutePage = (props) => {
