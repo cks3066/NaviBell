@@ -10,20 +10,28 @@ const RoutePage = (props) => {
   const [도착지, set도착지] = React.useState("");
   const [경로검색결과, set경로검색결과] = React.useState();
   const [is검색, setIs검색] = React.useState(false);
+  const [최근검색, set최근검색] = React.useState(true);
+  const [전체, set전체] = React.useState(true);
+  const [버스, set버스] = React.useState(false);
+  const [지하철, set지하철] = React.useState(false);
+  const [버스지하철, set버스지하철] = React.useState(false);
 
   const handleSearchOnClick = (e) => {
-    setIs검색(true);
-    axios
-      .get(
-        "https://api.odsay.com/v1/api/searchPubTransPath?SX=126.9027279&SY=37.5349277&EX=126.9145430&EY=37.5499421&apiKey=UPu%2BWjCg6qf1ZRG9oyRKzw"
-      )
-      .then((res) => {
-        set경로검색결과(res);
-        console.log(경로검색결과);
-      })
-      .catch((error) => {
-        console.dir(error);
-      });
+    if (출발지 === "" || 도착지 === "") {
+    } else {
+      setIs검색(true);
+      axios
+        .get(
+          "https://api.odsay.com/v1/api/searchPubTransPath?SX=126.9027279&SY=37.5349277&EX=126.9145430&EY=37.5499421&apiKey=UPu%2BWjCg6qf1ZRG9oyRKzw"
+        )
+        .then((res) => {
+          set경로검색결과(res);
+          console.log(경로검색결과);
+        })
+        .catch((error) => {
+          console.dir(error);
+        });
+    }
   };
 
   return (
@@ -58,8 +66,22 @@ const RoutePage = (props) => {
       {!is검색 ? (
         <div className="routeInitComponent">
           <div className="routeInitContainer">
-            <div className="recentSearch">최근검색</div>
-            <div className="bookMark">즐겨찾기</div>
+            <div
+              className={최근검색 ? "routeInitBtnClicked" : "routeInitBtn"}
+              onClick={(e) => {
+                set최근검색(!최근검색);
+              }}
+            >
+              최근검색
+            </div>
+            <div
+              className={!최근검색 ? "routeInitBtnClicked" : "routeInitBtn"}
+              onClick={(e) => {
+                set최근검색(!최근검색);
+              }}
+            >
+              즐겨찾기
+            </div>
           </div>
 
           <div className="recentSearchList"></div>
@@ -67,10 +89,50 @@ const RoutePage = (props) => {
       ) : (
         <div className="routeShowComponent">
           <div className="routeShowContainer">
-            <div className="routeShowBtn">전체</div>
-            <div className="routeShowBtn">버스</div>
-            <div className="routeShowBtn">지하철</div>
-            <div className="routeShowBtn">버스+지하철</div>
+            <div
+              className={전체 ? "routeShowBtnClicked" : "routeShowBtn"}
+              onClick={(e) => {
+                set전체(true);
+                set버스(false);
+                set지하철(false);
+                set버스지하철(false);
+              }}
+            >
+              전체 {경로검색결과.data.result.path.length}
+            </div>
+            <div
+              className={버스 ? "routeShowBtnClicked" : "routeShowBtn"}
+              onClick={(e) => {
+                set전체(false);
+                set버스(true);
+                set지하철(false);
+                set버스지하철(false);
+              }}
+            >
+              버스 {경로검색결과.data.result.busCount}
+            </div>
+            <div
+              className={지하철 ? "routeShowBtnClicked" : "routeShowBtn"}
+              onClick={(e) => {
+                set전체(false);
+                set버스(false);
+                set지하철(true);
+                set버스지하철(false);
+              }}
+            >
+              지하철 {경로검색결과.data.result.subwayCount}
+            </div>
+            <div
+              className={버스지하철 ? "routeShowBtnClicked" : "routeShowBtn"}
+              onClick={(e) => {
+                set전체(false);
+                set버스(false);
+                set지하철(false);
+                set버스지하철(true);
+              }}
+            >
+              버스+지하철 {경로검색결과.data.result.subwayBusCount}
+            </div>
           </div>
           <div className="routeShowList"></div>
         </div>

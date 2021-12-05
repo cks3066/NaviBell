@@ -29,12 +29,12 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.recentSearch {
+.routeInitBtnClicked {
   background-color: #3d73dd;
+  color: white;
   text-align: center;
   width: 45%;
   border-radius: 5px;
-  color: white;
   height: 35px;
   line-height: 35px;
   margin: 5px;
@@ -42,7 +42,7 @@
   cursor: pointer;
 }
 
-.bookMark {
+.routeInitBtn {
   text-align: center;
   width: 45%;
   border-radius: 5px;
@@ -72,6 +72,18 @@
 }
 
 .routeShowBtn {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  height: 25px;
+  line-height: 25px;
+  margin: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.routeShowBtnClicked {
   background-color: #3d73dd;
   color: white;
   text-align: center;
