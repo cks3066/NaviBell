@@ -19,14 +19,13 @@ const RoutePage = (props) => {
   const handleSearchOnClick = (e) => {
     if (출발지 === "" || 도착지 === "") {
     } else {
-      setIs검색(true);
       axios
         .get(
           "https://api.odsay.com/v1/api/searchPubTransPath?SX=126.9027279&SY=37.5349277&EX=126.9145430&EY=37.5499421&apiKey=UPu%2BWjCg6qf1ZRG9oyRKzw"
         )
         .then((res) => {
           set경로검색결과(res);
-          console.log(경로검색결과);
+          setIs검색(true);
         })
         .catch((error) => {
           console.dir(error);
