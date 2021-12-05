@@ -8,7 +8,7 @@ import searchBtn from "../img/searchButton.png";
 const handleSearchOnClick = (e) => {
   axios
     .get(
-      `https://api.odsay.com/v1/api/searchPubTransPath?SX=126.9027279&SY=37.5349277&EX=126.9145430&EY=37.5499421&apiKey=UPu+WjCg6qf1ZRG9oyRKzw`
+      "https://api.odsay.com/v1/api/searchPubTransPath?SX=126.9027279&SY=37.5349277&EX=126.9145430&EY=37.5499421&apiKey=UPu+WjCg6qf1ZRG9oyRKzw"
     )
     .then((res) => {
       console.log(res);
