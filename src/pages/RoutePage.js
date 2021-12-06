@@ -31,6 +31,7 @@ const RoutePage = (props) => {
           "https://api.odsay.com/v1/api/searchPubTransPath?SX=126.9027279&SY=37.5349277&EX=126.9145430&EY=37.5499421&apiKey=UPu%2BWjCg6qf1ZRG9oyRKzw"
         )
         .then((res) => {
+          console.log(res);
           set경로검색결과(res);
           setIs검색(true);
         })
@@ -108,14 +109,7 @@ const RoutePage = (props) => {
                     <div className="hr2" />
                   </div>
                 ))}
-                <div
-                  className="deleteSearches"
-                  onClick={(e) => {
-                    set최근검색목록([]);
-                  }}
-                >
-                  검색기록 삭제
-                </div>
+                <div className="deleteSearches">검색기록 삭제</div>
               </div>
             ) : (
               <div>즐겨찾기 목록</div>
@@ -134,7 +128,8 @@ const RoutePage = (props) => {
                 set버스지하철(false);
               }}
             >
-              전체 {경로검색결과.data.result.path.length}
+              전체
+              {/* 전체 {경로검색결과.data.result.path.length} */}
             </div>
             <div
               className={버스 ? "routeShowBtnClicked" : "routeShowBtn"}
@@ -145,7 +140,8 @@ const RoutePage = (props) => {
                 set버스지하철(false);
               }}
             >
-              버스 {경로검색결과.data.result.busCount}
+              버스
+              {/* 버스 {경로검색결과.data.result.busCount} */}
             </div>
             <div
               className={지하철 ? "routeShowBtnClicked" : "routeShowBtn"}
@@ -156,7 +152,8 @@ const RoutePage = (props) => {
                 set버스지하철(false);
               }}
             >
-              지하철 {경로검색결과.data.result.subwayCount}
+              지하철
+              {/* 지하철 {경로검색결과.data.result.subwayCount} */}
             </div>
             <div
               className={버스지하철 ? "routeShowBtnClicked" : "routeShowBtn"}
@@ -167,7 +164,8 @@ const RoutePage = (props) => {
                 set버스지하철(true);
               }}
             >
-              버스+지하철 {경로검색결과.data.result.subwayBusCount}
+              버스+지하철
+              {/* 버스+지하철 {경로검색결과.data.result.subwayBusCount} */}
             </div>
           </div>
           <div className="routeShowList"></div>
