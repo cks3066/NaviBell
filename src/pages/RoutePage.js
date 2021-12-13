@@ -150,7 +150,7 @@ const RoutePage = (props) => {
                 set버스지하철(false);
               }}
             >
-              전체 {경로검색결과.data.result.path.length}
+              전체 4
             </div>
             <div
               className={버스 ? "routeShowBtnClicked" : "routeShowBtn"}
@@ -161,7 +161,7 @@ const RoutePage = (props) => {
                 set버스지하철(false);
               }}
             >
-              버스 {경로검색결과.data.result.busCount}
+              버스 3
             </div>
             <div
               className={지하철 ? "routeShowBtnClicked" : "routeShowBtn"}
@@ -172,7 +172,7 @@ const RoutePage = (props) => {
                 set버스지하철(false);
               }}
             >
-              지하철 {경로검색결과.data.result.subwayCount}
+              지하철 1
             </div>
             <div
               className={버스지하철 ? "routeShowBtnClicked" : "routeShowBtn"}
@@ -183,26 +183,18 @@ const RoutePage = (props) => {
                 set버스지하철(true);
               }}
             >
-              버스+지하철 {경로검색결과.data.result.subwayBusCount}
+              버스+지하철 0
             </div>
           </div>
           <div className="routeShowList">
             <div className="routeShowElementContainer">
-              <img src={작은경로} />
+              <img src={큰경로} className="routeImg"/>
             </div>
             <div className="routeShowElementContainer">
-              <div>1시간 5분</div>
-              <div>버스 이미지 벼루말교 11465</div>
-              <div>1017 1137 261</div>
-              <div>버스 이미지 장위래미안아파트 08239</div>
-              <div>172</div>
+              <img src={작은경로} className="routeImg"/>
             </div>
             <div className="routeShowElementContainer">
-              <div>1시간 5분</div>
-              <div>버스 이미지 벼루말교 11465</div>
-              <div>1017 1137 261</div>
-              <div>버스 이미지 장위래미안아파트 08239</div>
-              <div>172</div>
+              <img src={큰경로} className="routeImg"/>
             </div>
           </div>
         </div>
