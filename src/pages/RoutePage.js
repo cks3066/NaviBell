@@ -5,6 +5,8 @@ import "../styles/Route.css";
 
 import searchBtn from "../img/searchButton.png";
 import recentSearch from "../img/recentSearch.png";
+import 작은경로 from "../img/작은경로.png";
+import 큰경로 from "../img/큰경로.png";
 
 const RoutePage = (props) => {
   const [출발지, set출발지] = React.useState("");
@@ -23,6 +25,10 @@ const RoutePage = (props) => {
     "광운대학교",
     "번3동 주민센터",
   ]);
+  const [즐겨찾기목록, set즐겨찾기목록] = React.useState([
+    "집", "학교", "직장", "식당"
+  ]);
+
   const handleSearchOnClick = (e) => {
     if (출발지 === "" || 도착지 === "") {
     } else {
@@ -112,7 +118,23 @@ const RoutePage = (props) => {
                 <div className="deleteSearches">검색기록 삭제</div>
               </div>
             ) : (
-              <div>즐겨찾기 목록</div>
+              <div>
+                {즐겨찾기목록.map((item) => (
+                  <div>
+                    <div className="recentSearch">
+                      <img
+                        src={recentSearch}
+                        width="14px"
+                        height="14px"
+                        alt="recentSearch"
+                        className="recentSearchImg"
+                      />
+                      <div className="recentSearchItem">{item}</div>
+                    </div>
+                    <div className="hr2" />
+                  </div>
+                ))}
+              </div>
             )}
           </div>
         </div>
@@ -166,11 +188,7 @@ const RoutePage = (props) => {
           </div>
           <div className="routeShowList">
             <div className="routeShowElementContainer">
-              <div>1시간 5분</div>
-              <div>버스 이미지 벼루말교 11465</div>
-              <div>1017 1137 261</div>
-              <div>버스 이미지 장위래미안아파트 08239</div>
-              <div>172</div>
+              <img src={작은경로} />
             </div>
             <div className="routeShowElementContainer">
               <div>1시간 5분</div>
